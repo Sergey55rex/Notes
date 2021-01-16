@@ -39,7 +39,6 @@ fun main(){
             0,
             "message2",
             ""
-
     ) ,notes, createComments))
 
     println(WallService.addCreateComment(CreateComment(
@@ -49,13 +48,11 @@ fun main(){
             0,
             "message2",
             ""
-
     ) ,notes, createComments))
 
     println(WallService.delete(1,notes))
 
     println(WallService.deleteComment(1, 2, notes, createComments))
-
 
     println(WallService.edit(AddNote(
             2,
@@ -73,8 +70,6 @@ fun main(){
             "all"
     ), notes))
 
-
-
     println(WallService.editComment(1,1, "message edit" ,createComments))
 
     println(WallService.get(listOf(2, 3), notes, listOfNotes))
@@ -84,7 +79,4 @@ fun main(){
     println( WallService.restoreComment(2, createComments))
 
     println(WallService.getComments(1, createComments, listOfComments))
-
-
-
 }

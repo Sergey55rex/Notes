@@ -1,8 +1,6 @@
 interface Note {
     val noteId: Int
         get() = 0
-    // val ownerId: Int
-    //    get() = 0
     val title: String
         get() = " "
     val text: String

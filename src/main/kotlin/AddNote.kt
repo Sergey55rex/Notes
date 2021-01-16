@@ -4,6 +4,4 @@ data class AddNote (
         override var text: String ="",
         override var privacyView: String = "all",
         override var privacyComment: String = "all",
-): Note{
-
-}
+): Note

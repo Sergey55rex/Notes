@@ -7,7 +7,6 @@ object WallService {
         return noteId
     }
 
-
     fun addCreateComment(createComment: CreateComment, notes: MutableList<AddNote>, createComments: MutableList<CreateComment>): Int {
         for ((index, note) in notes.withIndex()) {
             if (note.noteId == createComment.noteId){
@@ -19,7 +18,6 @@ object WallService {
         return createComments.size
     }
 
-
     fun delete(noteId: Int, notes: MutableList<AddNote>): Int {
         for ((index, note) in notes.withIndex()) {
             if (note.noteId == noteId){
@@ -29,7 +27,6 @@ object WallService {
         }
         return 180
     }
-
 
     fun deleteComment(ownerId: Int, deleteComment: Int, notes: MutableList<AddNote>, createComments: MutableList<CreateComment>): Int{
 
@@ -42,7 +39,6 @@ object WallService {
         return 181
     }
 
-
     fun edit(addNote: AddNote, notes: MutableList<AddNote>): Int {
         for ((index, note) in notes.withIndex()) {
             if (note.noteId == addNote.noteId){
@@ -53,7 +49,6 @@ object WallService {
         return 180
     }
 
-
     fun editComment(commentId: Int, ownerId: Int, messageEdit: String,createComments: MutableList<CreateComment>): Int {
         for ((index, createComment) in createComments.withIndex()) {
             if (createComment.ownerId == ownerId && createComment.deleteLabel != 0 && createComment.commentId == commentId) {
@@ -63,8 +58,6 @@ object WallService {
         }
         return 181
     }
-
-
 
     fun get(noteIds: List<Int>, notes: MutableList<AddNote>,listOfNotes:MutableList<AddNote>):List<Note> {
         for (noteId in noteIds) {
