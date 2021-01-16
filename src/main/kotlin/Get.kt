@@ -8,21 +8,3 @@ data class Get(
 ): Note
 
 
-fun get(notes: MutableList<AddNote>): MutableList<Int> {
-    val noteId: List<Int> = emptyList<Int>()
-    var noteIds = noteId.toMutableList()
-    for (note in notes){
-        noteIds.add(note.noteId)
-    }
-    return noteIds
-}
-
-
-fun getById(notes: MutableList<AddNote>)  {
-    val noteId = 1
-    for (note in notes){
-        if (note.noteId == noteId){
-        }
-    }
-}
-
