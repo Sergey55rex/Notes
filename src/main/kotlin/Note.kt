@@ -1,16 +1,13 @@
-interface Note {
-    val noteId: Int
-        get() = 0
-    val title: String
-        get() = " "
-    val text: String
-        get() = " "
-    val privacyView: String
-        get() = "all"
-    val privacyComment: String
-        get() = "all"
+data class Note(
+        var title: String = "",
+        var text: String = "",
+        var privacyView: String = "all",
+        var privacyComment: String = "all",
+        val noteId: Int,
+        var ownerId: Int,
+)
 
-}
+
 
 
 

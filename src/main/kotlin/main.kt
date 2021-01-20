@@ -1,82 +1,119 @@
 fun main(){
-    val note = emptyList<AddNote>()
+    val note = emptyList<Note>()
     var notes = note.toMutableList()
 
-    val createCommenten = emptyList<CreateComment>()
-    var createComments = createCommenten.toMutableList<CreateComment>()
+    var comment = emptyList<Comment>()
+    var comments = comment.toMutableList<Comment>()
 
-    val listOfNote = emptyList<AddNote>()
-    var listOfNotes =  listOfNote.toMutableList()
-
-    val listOfComment = emptyList<CreateComment>()
-    var listOfComments =  listOfComment.toMutableList<CreateComment>()
-
-    println(WallService.add(AddNote(
-            0,
-            "TITLE",
-            "TEXT",
+    NoteService.add(Note(
+            "title",
+            "text",
             "all",
-            "all"),notes))
-
-    println(WallService.add(AddNote(
-            0,
-            "TITLE1",
-            "TEXT2",
             "all",
-            "all"),notes))
+            1,
+            0
+    ),notes, 1)
 
-    println(WallService.add(AddNote(
-            0,
-            "TITLE3",
-            "TEXT3",
+    println(NoteService.add(Note(
+            "title",
+            "text",
             "all",
-            "all"),notes))
-
-    println(WallService.addCreateComment(CreateComment(
-            1,
-            1,
-            1,
-            0,
-            "message2",
-            ""
-    ) ,notes, createComments))
-
-    println(WallService.addCreateComment(CreateComment(
-            1,
-            1,
-            0,
-            0,
-            "message2",
-            ""
-    ) ,notes, createComments))
-
-    println(WallService.delete(1,notes))
-
-    println(WallService.deleteComment(1, 2, notes, createComments))
-
-    println(WallService.edit(AddNote(
-            2,
-            "Title edit",
-            "text edit",
             "all",
-            "all"
-    ), notes))
-
-    println(WallService.edit(AddNote(
             1,
-            "Title edit",
-            "text edit",
+            0
+    ),notes, 1))
+
+    println(notes)
+
+    println(CommentService.add(Comment(
+            1,
+            0,
+            0,
+            0,
+            "message",
+            "",
+            1
+    ), notes, comments))
+    println(comments)
+
+
+    NoteService.delete(Note(
+            "title",
+            "text",
             "all",
-            "all"
-    ), notes))
+            "all",
+            1,
+            0
+    ),notes,1)
 
-    println(WallService.editComment(1,1, "message edit" ,createComments))
 
-    println(WallService.get(listOf(2, 3), notes, listOfNotes))
+    CommentService.delete(Comment(
+            1,
+            0,
+            1,
+            0,
+            "message",
+            "",
+            1), notes, comments)
+    println(comments)
 
-    println(WallService.getById(2, notes))
+    NoteService.edit(Note(
+            "title22",
+            "text22",
+            "all",
+            "all",
+            1,
+            0
+    ),notes,1)
+    println(notes)
 
-    println( WallService.restoreComment(2, createComments))
+    println(CommentService.edit(Comment(
+            1,
+            0,
+            1,
+            0,
+            "message44",
+            "",
+            1), notes, comments))
+    println(comments)
 
-    println(WallService.getComments(1, createComments, listOfComments))
+    CommentService.restore(Comment(
+            1,
+            0,
+            1,
+            0,
+            "message",
+            "",
+            0), notes, comments)
+    println(comments)
+
+
+    println(NoteService.get(Note(
+            "title",
+            "text",
+            "all",
+            "all",
+            1,
+            0
+    ),notes,1))
+
+
+    println(NoteService.getById(Note(
+            "title",
+            "text",
+            "all",
+            "all",
+            1,
+            0
+    ),notes,2))
+
+    println(CommentService.get(Comment(
+            1,
+            0,
+            1,
+            0,
+            "message",
+            "",
+            1), notes, comments))
 }
+
